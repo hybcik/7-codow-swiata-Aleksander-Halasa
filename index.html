@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Aleksander Hałasa">
+    <meta name="keywords" content="7 cudów świata, starożytne cuda, wielkie budowle, historia, turystyka">
+    <meta name="description" content="Strona poświęcona 7 cudom świata - starożytnym budowlom i ich historii">
+    <title>7 Cudów Świata - Aleksander Hałasa</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="logo">7 Cudów Świata</div>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="#intro">Wstęp</a></li>
+                <li><a href="#gallery">Galeria</a></li>
+                <li><a href="#quiz">Quiz</a></li>
+                <li><a href="#info">Informacje</a></li>
+                <li><a href="#contact">Przydatne linki</a></li>
+                <li><a href="#video">Wideo</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="intro" class="hero">
+            <h1>Odkryj 7 Cudów Świata</h1>
+            <p class="hero-text">Przejrzyj galerię najwspanialszych budowli starożytnego świata i przetestuj swoją wiedzę!</p>
+            <div class="hero-buttons">
+                <button onclick="scrollToSection('gallery')">Zobacz Galerię</button>
+                <button onclick="scrollToSection('quiz')" class="secondary">Rozpocznij Quiz</button>
+            </div>
+        </section>
+
+        <section id="gallery" class="gallery-section">
+            <h2>Galeria 7 Cudów Świata</h2>
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <img src="img/mur.jpg" alt="Wielki Mur Chiński" loading="lazy">
+                    <h3>Wielki Mur Chiński</h3>
+                    <p>Olbrzymia forteca chroniąca Chiny przed najazdami.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/petra.jpg" alt="Petra" loading="lazy">
+                    <h3>Petra</h3>
+                    <p>Różowe miasto wykute w skale przez Nabatejczyków.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/koloseum.jpg" alt="Colosseum" loading="lazy">
+                    <h3>Koloseum</h3>
+                    <p>Rzymski amfiteatr symbolizujący potęgę Imperium.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/chichen.jpg" alt="Chichen Itza" loading="lazy">
+                    <h3>Chichen Itza</h3>
+                    <p>Majowska świątynia Kukulkana w Meksyku.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/machu.jpg" alt="Machu Picchu" loading="lazy">
+                    <h3>Machu Picchu</h3>
+                    <p>Inkańskie miasto w chmurach Peru.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/mahal.jpg" alt="Taj Mahal" loading="lazy">
+                    <h3>Taj Mahal</h3>
+                    <p>Białe marmurowe mauzoleum miłości w Indiach.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/chrystus.jpg" alt="Christ the Redeemer" loading="lazy">
+                    <h3>Chrystus Odkupiciel</h3>
+                    <p>Statua Jezusa w Rio de Janeiro.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="quiz" class="quiz-section">
+            <h2>Quiz: Ile wiesz o 7 Cudach Świata?</h2>
+            <div class="quiz-container">
+                <div class="quiz-question">
+                    <h3>1. Który cud został wybudowany jako symbol miłości?</h3>
+                    <label><input type="radio" name="q1" value="taj"> Taj Mahal</label><br>
+                    <label><input type="radio" name="q1" value="petra"> Petra</label><br>
+                    <label><input type="radio" name="q1" value="wall"> Wielki Mur Chiński</label>
+                </div>
+                <div class="quiz-question">
+                    <h3>2. Gdzie znajduje się Machu Picchu?</h3>
+                    <select name="q2">
+                        <option value="">Wybierz odpowiedź...</option>
+                        <option value="peru">Peru</option>
+                        <option value="mexico">Meksyk</option>
+                        <option value="brazil">Brazylia</option>
+                        <option value="chile">Chile</option>
+                    </select>
+                </div>
+                <div class="quiz-question">
+                    <h3>3. Które cuda znajdują się w Azji? (zaznacz wszystkie)</h3>
+                    <label><input type="checkbox" name="q3[]" value="china"> Wielki Mur Chiński</label><br>
+                    <label><input type="checkbox" name="q3[]" value="petra"> Petra</label><br>
+                    <label><input type="checkbox" name="q3[]" value="taj"> Taj Mahal</label><br>
+                    <label><input type="checkbox" name="q3[]" value="colosseum"> Koloseum</label>
+                </div>
+                <div class="quiz-question">
+                    <h3>4. Jak oceniasz swoją wiedzę o 7 Cudach Świata?</h3>
+                    <input type="range" name="q4" min="1" max="10" value="5" oninput="this.nextElementSibling.value = this.value">
+                    <output>5</output>/10
+                </div>
+                <div class="quiz-buttons">
+                    <button type="button" onclick="checkQuiz()">Sprawdź odpowiedzi</button>
+                    <button type="button" onclick="clearQuiz()" class="secondary">Wyczyść</button>
+                </div>
+                <div id="quiz-result"></div>
+            </div>
+        </section>
+
+        <section id="info" class="info-section">
+            <h2>Informacje o 7 Cudach Świata</h2>
+            <div class="info-container">
+                <div class="info-table">
+                    <h3>Dane techniczne</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Cud</th>
+                                <th>Kraj</th>
+                                <th>Rok budowy</th>
+                                <th>Wysokość</th>
+                                <th>koszt wycieczki</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Wielki Mur Chiński</td>
+                                <td>Chiny</td>
+                                <td>7 w. p.n.e.</td>
+                                <td>5-14 m</td>
+                                <td>ok 400zł/os (jednodniowa wycieczka z pekinu)</td>
+                            </tr>
+                            <tr>
+                                <td>Petra</td>
+                                <td>Jordania</td>
+                                <td>312 p.n.e.</td>
+                                <td>45-60 m</td>
+                                <td>od 340zł/os (jednodniowa wycieczka z egiptu)</td>
+                            </tr>
+                            <tr>
+                                <td>Koloseum</td>
+                                <td>Włochy</td>
+                                <td>80 n.e.</td>
+                                <td>48 m</td>
+                                <td>od 100zł/os (bilet wstępu)</td>
+                            </tr>
+                            <tr>
+                                <td>Chichen Itza</td>
+                                <td>Meksyk</td>
+                                <td>600-900 n.e.</td>
+                                <td>30 m</td>
+                                <td>od 300zł/os (bilet wstępu)</td>
+                            </tr>
+                            <tr>
+                                <td>Machu Picchu</td>
+                                <td>Peru</td>
+                                <td>1450 n.e.</td>
+                                <td>2430 m n.p.m.</td>
+                                <td>od 200zł/os (bilet wstępu) natomiast wyprawa szlakiem inków od 2500zł/os</td>
+                            </tr>
+                            <tr>
+                                <td>Taj Mahal</td>
+                                <td>Indie</td>
+                                <td>1653 n.e.</td>
+                                <td>73 m</td>
+                                <td>od 150zł/os (bilet wstępu)</td>
+                            </tr>
+                            <tr>
+                                <td>Chrystus Odkupiciel</td>
+                                <td>Brazylia</td>
+                                <td>1931 n.e.</td>
+                                <td>38 m</td>
+                                <td>od 400zł/os (bilet wstępu)</td>
+                                
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="info-lists">
+                    <div class="list-container">
+                        <h3>5 powodów, dla których warto odwiedzić:</h3>
+                        <ol>
+                            <li>Niezwykła historia i kultura</li>
+                            <li>Wspaniała architektura</li>
+                            <li>Piękne widoki</li>
+                            <li>Możliwość nauki</li>
+                            <li>Niepowtarzalne doświadczenie</li>
+                        </ol>
+                    </div>
+                    <div class="list-container">
+                        <h3>Co zabrać ze sobą:</h3>
+                        <ul>
+                            <li>Aparat fotograficzny</li>
+                            <li>Wygodne buty</li>
+                            <li>Wodę i przekąski</li>
+                            <li>Przewodnik</li>
+                            <li>Mapę lub GPS</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2>Więcej informacji</h2>
+            <div class="contact-container">
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.991440322155!2d2.292292615674397!3d48.85837007928746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e29641f45e9%3A0x10b2f6364a850!2sWie%C5%B9a%20Eiffla!5e0!3m2!1spl!2spl!4v1634567890123!5m2!1spl!2spl" 
+                            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+                <div class="links-container">
+                    <h3>Przydatne linki:</h3>
+                    <ul>
+                        <li><a href="https://r.pl/blog/7-cudow-swiata-lista" target="_blank" rel="noopener noreferrer">Jak je wybrano - 7 Cudów Świata</a></li>
+                        <li><a href="https://www.rzym.it/koloseum/" target="_blank" rel="noopener noreferrer">Więcej o Koloseum</a></li>
+                        <li><a href="https://r.pl/blog/pomnik-chrystusa-odkupiciela-w-rio-de-janeiro-wszystko-co-musisz-wiedziec" target="_blank" rel="noopener noreferrer">Więcej o pomniku Chrystusa z Rio</a></li>
+                        <li><a href="https://pakujplecak.pl/machu-picchu-praktyczny-przewodnik/" target="_blank" rel="noopener noreferrer">Machu Picchu - przewodnik</a></li>
+                        <li><a href="https://r.pl/blog/wielki-mur-chinski" target="_blank" rel="noopener noreferrer">Więcej o Wielkim Murze Chińskim</a></li>
+                        <li><a href="https://r.pl/blog/taj-mahal-historia-co-warto-wiedziec" target="_blank" rel="noopener noreferrer">Więcej o Taj Mahal</a></li>
+                        <li><a href="https://r.pl/blog/chichen-itza-w-meksyku-zwiedzanie-i-ciekawostki-na-temat-miasta-majow" target="_blank" rel="noopener noreferrer">Więcej o Chichen Itza</a></li>
+                        <li><a href="https://r.pl/blog/petra-w-jordanii-miasto-wykute-w-skale" target="_blank" rel="noopener noreferrer">Więcej o Petrze</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    </section> 
+        
+        <section id="video" class="video-section">
+            <h2>Wideo</h2>
+            <div class="video-container">
+                
+                <div class="embed">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/cnMa-Sm9H4k?si=VJa7y8zzeAKai9F0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+            </div>
+        </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Aleksander Hałasa - Klasa 2tb</p>
+            <p>Strona o 7 Cudach Świata</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

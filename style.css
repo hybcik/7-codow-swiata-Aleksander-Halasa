@@ -38,7 +38,7 @@ header {
     font-weight: 700;
     background: linear-gradient(45deg, #2e7d32, #558b2f, #8d6e63, #5d4037);
     background-size: 300% 300%;
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: gradientShift 4s ease-in-out infinite;
     text-align: center;
@@ -115,7 +115,7 @@ main {
     font-size: 3.5rem;
     margin-bottom: 1rem;
     background: linear-gradient(45deg, #2e7d32, #558b2f, #8d6e63);
-    -webkit-background-clip: text;
+   background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
